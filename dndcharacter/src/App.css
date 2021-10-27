@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.home-header {
   background-color: lightseagreen;
   height: 30vh;
   display: flex;
@@ -11,6 +11,20 @@
   justify-content: right;
   font-size: calc(10px + 2vmin);
   color: black;
+}
+
+.home-body {
+  height: 70vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.create-btn {
+  height: 50px;
+  width: 150px;
+  background-color: red;
+  margin-top: 8vh;
 }
 
 
