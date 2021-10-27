@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import '../App.css';
 
-function homePage() {
+function Homepage() {
   return (
     <div className="home">
       <header className="home-header">
@@ -17,4 +17,4 @@ function homePage() {
   );
 }
 
-export default homePage;
+export default Homepage;
