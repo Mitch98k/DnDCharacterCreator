@@ -7,12 +7,12 @@ import './App.css';
 function App() {
   return (
     <div>
+      <Route path='/races'>
+        <RaceSelection/>
+      </Route>
       <Route exact path='/'>
         <Homepage/>
       </Route>
-      <route path='/races'>
-        <RaceSelection/>
-      </route>
     </div>
   );
 }
