@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import '../css/Common.css';
 import '../css/RaceSelection.css';
 
 function RaceSelection() {
+    const { push } = useHistory();
+
     const [races, setRaces] = useState([]);
     const [race, setRace] = useState("");
 
@@ -18,7 +21,9 @@ function RaceSelection() {
     return (
         <div className="race">
           <header className="race-header">
+            <button onClick={() => push('/')} className='home-btn'>Home</button>
             <h1>select your race</h1>
+            <progress value='1' max='8'/>
           </header>
           <body className = "race-body">
             {races.map(r => (

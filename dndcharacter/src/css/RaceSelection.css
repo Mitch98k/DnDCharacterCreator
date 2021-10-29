@@ -1,3 +1,7 @@
+.race-header {
+    flex-direction: row;
+    justify-content: space-between;
+}
 .race-body {
     display: flex;
     flex-direction: column;
