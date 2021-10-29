@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import '../App.css';
+import '../css/Common.css';
+import '../css/Homepage.css';
 
 function Homepage() {
   return (
@@ -9,7 +10,7 @@ function Homepage() {
        <h2>5th Edition Character Creator</h2>
       </header>
       <body className="home-body">
-        <button className="create-btn">
+        <button className="btn">
           Create your character
         </button>
       </body>
