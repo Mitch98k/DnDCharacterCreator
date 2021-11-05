@@ -27,7 +27,9 @@ function RaceSelection() {
           </header>
           <body className = "race-body">
             {races.map(r => (
+              <div className="card">
                 <h2 key={r.index} className="races">{r.name}</h2>
+              </div>
             ))}
           </body>
         </div>

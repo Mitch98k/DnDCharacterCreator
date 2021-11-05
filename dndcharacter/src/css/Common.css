@@ -1,5 +1,4 @@
 header {
-  background-color: lightseagreen;
   height: 30vh;
   width: 100vw;
   display: flex;
@@ -23,6 +22,16 @@ body {
     background-color: red;
     margin-top: 8vh;
   }
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  margin: 15px;
+  background-color: bisque;
+}
 
 .home-btn {
   margin-left: 10vw;
