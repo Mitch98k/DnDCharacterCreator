@@ -29,6 +29,7 @@ function RaceSelection() {
             {races.map(r => (
               <div className="card">
                 <h2 key={r.index} className="races">{r.name}</h2>
+                <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}
           </body>
