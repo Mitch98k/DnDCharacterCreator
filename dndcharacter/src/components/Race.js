@@ -10,7 +10,7 @@ function Race() {
             console.log(res.data)
         })
         .catch(err => console.log(err));
-    }, []);
+    }, id);
     return (
         <p>this race is {id}</p>
     )
