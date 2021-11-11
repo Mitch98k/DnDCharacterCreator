@@ -38,6 +38,7 @@ function Race() {
             res.data.starting_proficiency_options &&
             setOptions(res.data.starting_proficiency_options.from);
             setSubraces(res.data.subraces);
+            res.data.traits &&
             setTraits(res.data.traits);
         })
         .catch(err => console.log(err));
@@ -70,8 +71,8 @@ function Race() {
                 {options.length > 0 && options.map(op => (
                     <p>{op.name}</p>
                 ))} */}
-                <h4>your traits include:</h4>
-                {traits.map(t => (
+                {traits.length > 0 && <h4>your traits include:</h4>}
+                {traits.length > 0 && traits.map(t => (
                     <p>{t.name}</p>
                 ))}
             </body>
