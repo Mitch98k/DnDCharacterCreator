@@ -19,16 +19,16 @@ function RaceSelection() {
     }, []);
 
     return (
-        <div className="race">
-          <header className="race-header">
+        <div className="races">
+          <header className="races-header">
             <button onClick={() => push('/')} className='home-btn'>Home</button>
             <h1>select your race</h1>
             <progress value='1' max='8'/>
           </header>
-          <body className = "race-body">
+          <body className = "races-body">
             {races.map(r => (
               <div className="card">
-                <h2 key={r.index} className="races">{r.name}</h2>
+                <h2 key={r.index} className="race">{r.name}</h2>
                 <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}

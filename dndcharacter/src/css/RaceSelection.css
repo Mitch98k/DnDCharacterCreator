@@ -1,9 +1,9 @@
-.race-header {
+.races-header {
     background-color: forestgreen;
     flex-direction: row;
     justify-content: space-between;
 }
-.race-body {
+.races-body {
     display: flex;
     flex-direction: column;
     align-items: center;

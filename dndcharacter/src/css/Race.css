@@ -1,0 +1,17 @@
+.race-header {
+    background-color: orangered;
+}
+.race-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 2vw;
+}
+#abilitiesDiv {
+    display: flex;
+    flex-direction: row;
+}
+#scores {
+    font-size: 1.8rem;
+    margin-right: 2vw;
+}

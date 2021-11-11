@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../css/Common.css';
+import '../css/Race.css';
 
 function Race() {
     const { id } = useParams();
@@ -42,24 +44,37 @@ function Race() {
     }, id);
 
     return (
-        <div>
-            <h1>{name}</h1>
-            {abilities.map(a => (
-                <h4 key={a.ability_score.index}>{a.ability_score.name}: {a.bonus}</h4>
-            ))}
-            <p>age: {age}</p>
-            <p>alignment: {alignment}</p>
-            <p>languages: {languages}</p>
-            <p>size: {size}</p>
-            <p>your speed is {speed}</p>
-            {proficiencies.length > 0 && <h3>you are proficient in:</h3>}
-            {proficiencies && proficiencies.map(p => (
-                <p>{p.name}</p>
-            ))}
-            {choiceNum > 0 && <h3>additionally, you can choose {choiceNum} proficiencies from the following:</h3>}
-            {options.length > 0 && options.map(op => (
-                <p>{op.name}</p>
-            ))}
+        <div className='race'>
+            <header className='race-header'>
+                <h1>{name}</h1>
+                <div id='abilitiesDiv'>
+                    {abilities.map(a => (
+                        <h2 key={a.ability_score.index} id='scores'>{a.ability_score.name}: {a.bonus}</h2>
+                    ))}
+                </div>
+            </header>
+            <body className='race-body'>
+                <h3>age:</h3>
+                <p>{age}</p>
+                <h3>alignment:</h3>
+                <p>{alignment}</p>
+                <h3>languages:</h3>
+                <p>{languages}</p>
+                <h3>size:</h3>
+                <p>{size}</p>
+                {/* {proficiencies.length > 0 && <h3>you are proficient in:</h3>}
+                {proficiencies && proficiencies.map(p => (
+                    <p>{p.name}</p>
+                ))}
+                {choiceNum > 0 && <h3>{proficiencies.length > 0 ? 'additionally,' : null} you can choose {choiceNum} {choiceNum > 1 ? 'proficiencies' : 'proficiency'} from the following:</h3>}
+                {options.length > 0 && options.map(op => (
+                    <p>{op.name}</p>
+                ))} */}
+                <h4>your traits include:</h4>
+                {traits.map(t => (
+                    <p>{t.name}</p>
+                ))}
+            </body>
         </div>
     )
 }
