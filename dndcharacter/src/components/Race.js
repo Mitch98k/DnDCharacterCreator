@@ -31,13 +31,16 @@ function Race() {
             setSize(res.data.size_description);
             setSpeed(res.data.speed);
             setProficiencies(res.data.starting_proficiencies);
+            res.data.starting_proficiency_options && 
             setChoiceNum(res.data.starting_proficiency_options.choose);
+            res.data.starting_proficiency_options &&
             setOptions(res.data.starting_proficiency_options.from);
             setSubraces(res.data.subraces);
             setTraits(res.data.traits);
         })
         .catch(err => console.log(err));
     }, id);
+
     return (
         <div>
             <h1>{name}</h1>
@@ -49,12 +52,12 @@ function Race() {
             <p>languages: {languages}</p>
             <p>size: {size}</p>
             <p>your speed is {speed}</p>
-            <h3>you are proficient in:</h3>
-            {proficiencies.map(p => (
-                <h4>{p.name}</h4>
+            {proficiencies.length > 0 && <h3>you are proficient in:</h3>}
+            {proficiencies && proficiencies.map(p => (
+                <p>{p.name}</p>
             ))}
-            <h3>additionally, you can choose {choiceNum} proficiencies from the following:</h3>
-            {options.map(op => (
+            {choiceNum > 0 && <h3>additionally, you can choose {choiceNum} proficiencies from the following:</h3>}
+            {options.length > 0 && options.map(op => (
                 <p>{op.name}</p>
             ))}
         </div>
