@@ -80,6 +80,7 @@ function Race() {
                 {traits.length > 0 && traits.map(t => (
                     <p>{t.name}</p>
                 ))}
+                <button className='btn'>Choose this race</button>
             </body>
         </div>
     )

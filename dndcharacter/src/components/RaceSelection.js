@@ -32,6 +32,7 @@ function RaceSelection() {
                 <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}
+            <button className='btn'>Submit</button>
           </body>
         </div>
     );
