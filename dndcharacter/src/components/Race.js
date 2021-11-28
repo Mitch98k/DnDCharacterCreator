@@ -6,6 +6,7 @@ import '../css/Race.css';
 
 function Race() {
     const { id } = useParams();
+    const { push } = useHistory();
 
     const [name, setName] = useState('');
     const [abilities, setAbilities] = useState([]);
@@ -46,6 +47,10 @@ function Race() {
 
     return (
         <div className='race'>
+            <nav>
+                <button onClick={() => push('/races')}>back to race list</button>
+                <button onClick={() => push('/')} className='home-btn'>home</button>
+            </nav>
             <header className='race-header'>
                 <h1>{name}</h1>
                 <div id='abilitiesDiv'>
@@ -75,6 +80,7 @@ function Race() {
                 {traits.length > 0 && traits.map(t => (
                     <p>{t.name}</p>
                 ))}
+                <button className='btn'>Choose this race</button>
             </body>
         </div>
     )
