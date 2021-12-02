@@ -8,11 +8,7 @@ function RaceSelection() {
     const { push } = useHistory();
 
     const [races, setRaces] = useState([]);
-    const [race, setRace] = useState("");
-
-    const cardClick = e => {
-      e.target.className='clickedCard'
-    };
+    const [race, setRace] = useState();
 
     useEffect(() => {
         axios.get('https://www.dnd5eapi.co/api/races')
@@ -21,6 +17,10 @@ function RaceSelection() {
         })
         .catch(err => console.log(err));
     }, []);
+
+    const handleClick = e => {
+      setRace(e.target.innerText);
+    }
 
     return (
         <div className="races">
@@ -31,9 +31,11 @@ function RaceSelection() {
           </header>
           <body className = "races-body">
             {races.map(r => (
-              <div className="card" onClick={cardClick}>
-                <h2 key={r.index} className="race">{r.name}</h2>
-                <p onClick={() => push(`/races/${r.index}`)}>more info</p>
+              <div>
+                <div className="card">
+                  <h2 key={r.name} onClick={handleClick}>{r.name}</h2>
+                </div>
+                  <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}
             <button className='btn'>Submit</button>
