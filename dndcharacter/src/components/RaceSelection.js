@@ -18,9 +18,11 @@ function RaceSelection() {
         .catch(err => console.log(err));
     }, []);
 
-    const handleClick = e => {
-      setRace(e.target.innerText);
-    }
+
+    console.log(race);
+    // const handleClick = e => {
+    //   setRace(e.target.innerText);
+    // }
 
     return (
         <div className="races">
@@ -32,8 +34,8 @@ function RaceSelection() {
           <body className = "races-body">
             {races.map(r => (
               <div>
-                <div className="card">
-                  <h2 key={r.name} onClick={handleClick}>{r.name}</h2>
+                <div className={race===r.name ? "selected" : "card"}key={r.name} onClick={() => setRace(r.name)}>
+                  <h2>{r.name}</h2>
                 </div>
                   <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
