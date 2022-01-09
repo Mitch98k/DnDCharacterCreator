@@ -3,11 +3,15 @@ import { Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import RaceSelection from './components/RaceSelection';
 import Race from './components/Race';
+import ClassSelection from './components/ClassSelection';
 import './App.css';
 
 function App() {
   return (
     <div>
+      <Route path='/classes'>
+        <ClassSelection/>
+      </Route>
       <Route path='/races/:id'>
         <Race/>
       </Route>

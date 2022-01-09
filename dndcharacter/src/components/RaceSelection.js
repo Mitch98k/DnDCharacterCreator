@@ -18,12 +18,6 @@ function RaceSelection() {
         .catch(err => console.log(err));
     }, []);
 
-
-    console.log(race);
-    // const handleClick = e => {
-    //   setRace(e.target.innerText);
-    // }
-
     return (
         <div className="races">
           <header className="races-header">
