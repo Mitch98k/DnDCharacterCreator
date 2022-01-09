@@ -23,10 +23,12 @@ function ClassSelection() {
 
     return (
         <div>
-            <header>
+            <header className="selection-header" style={{ backgroundColor: 'navy'}}>
+                <button onClick={() => push('/')} className='home-btn'>Home</button>
                 <h1>select your class</h1>
+                <progress value='2' max='8'/>
             </header>
-            <body className="classes-body">
+            <body className="selection-body">
                 {classes.map(c => (
                     <div>
                         <div className="card" key={c.name}>

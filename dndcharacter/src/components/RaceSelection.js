@@ -20,12 +20,12 @@ function RaceSelection() {
 
     return (
         <div className="races">
-          <header className="races-header">
+          <header className="selection-header" style={{ backgroundColor: 'forestgreen' }}>
             <button onClick={() => push('/')} className='home-btn'>Home</button>
             <h1>select your race</h1>
             <progress value='1' max='8'/>
           </header>
-          <body className = "races-body">
+          <body className = "selection-body">
             {races.map(r => (
               <div>
                 <div className={race===r.name ? "selected" : "card"}key={r.name} onClick={() => setRace(r.name)}>
@@ -34,8 +34,10 @@ function RaceSelection() {
                 <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}
-            <button className='btn'>Submit</button>
           </body>
+          <footer>
+            <button className='btn'>Submit</button>
+          </footer>
         </div>
     );
 }
