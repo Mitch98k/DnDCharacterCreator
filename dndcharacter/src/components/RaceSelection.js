@@ -31,7 +31,7 @@ function RaceSelection() {
                 <div className={race===r.name ? "selected" : "card"}key={r.name} onClick={() => setRace(r.name)}>
                   <h2>{r.name}</h2>
                 </div>
-                  <p onClick={() => push(`/races/${r.index}`)}>more info</p>
+                <p onClick={() => push(`/races/${r.index}`)}>more info</p>
               </div>
             ))}
             <button className='btn'>Submit</button>
