@@ -4,12 +4,16 @@ import Homepage from './components/Homepage';
 import RaceSelection from './components/RaceSelection';
 import Race from './components/Race';
 import ClassSelection from './components/ClassSelection';
+import CharClass from './components/Class';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Route path='/classes'>
+      <Route path='/classes/:id'>
+        <CharClass/>
+      </Route>
+      <Route exact path='/classes'>
         <ClassSelection/>
       </Route>
       <Route path='/races/:id'>

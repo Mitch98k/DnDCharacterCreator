@@ -34,7 +34,7 @@ function ClassSelection() {
                         <div className="card" key={c.name}>
                             <h2>{c.name}</h2>
                         </div>
-                        <p>more info</p>
+                        <p onClick={() => push(`/classes/${c.index}`)}>more info</p>
                     </div>
                 ))}
             </body>
