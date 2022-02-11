@@ -38,6 +38,9 @@ function ClassSelection() {
                     </div>
                 ))}
             </body>
+            <footer>
+                <button className='btn'>submit</button>
+            </footer>
         </div>
     );
 }

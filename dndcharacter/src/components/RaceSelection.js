@@ -36,7 +36,7 @@ function RaceSelection() {
             ))}
           </body>
           <footer>
-            <button className='btn'>Submit</button>
+            <button className='btn' onClick={() => push('/classes')}>Submit</button>
           </footer>
         </div>
     );
