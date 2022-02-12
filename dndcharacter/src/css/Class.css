@@ -1,0 +1,10 @@
+.class-header {
+    background-color: aqua;
+}
+.class-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-left: 2vw;
+}

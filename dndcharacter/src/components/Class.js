@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Common.css';
+import '../css/Class.css';
 
 function CharClass() {
     const { id } = useParams();
@@ -32,23 +33,24 @@ function CharClass() {
                 <button onClick={() => push('/classes')}>back to class list</button>
                 <button onClick={() => push('/')} className='home-btn'>home</button>
             </nav>
-            <header>
+            <header className='class-header'>
                 <h1>{name}</h1>
                 <p>{`one d${die}`}</p>
             </header>
-            <body>
+            <body className='class-body'>
                 <h2>proficiencies:</h2>
                 <div>
                     {prof.map(p => (
                         <h3>{p.name}</h3>
                     ))}
                 </div>
-                <h3>saving throws:</h3>
+                <h2>saving throws:</h2>
                 <div>
                     {throws.map(t => (
-                        <h4>{t.name}</h4>
+                        <h3>{t.name}</h3>
                     ))}
                 </div>
+                <button className='btn'>Choose this class</button>
             </body>
         </div>
     )
