@@ -3,16 +3,19 @@ import { Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import RaceSelection from './components/RaceSelection';
 import Race from './components/Race';
+import ClassSelection from './components/ClassSelection';
+import CharClass from './components/Class';
 import './App.css';
-import BackgroundSelection from './components/BackgroundSelection';
 
 function App() {
   return (
     <div>
-      <Route exact path='/backgrounds'>
-        <BackgroundSelection/>
+      <Route path='/classes/:id'>
+        <CharClass/>
       </Route>
-      
+      <Route exact path='/classes'>
+        <ClassSelection/>
+      </Route>
       <Route path='/races/:id'>
         <Race/>
       </Route>
