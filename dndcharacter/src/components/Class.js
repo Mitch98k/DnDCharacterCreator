@@ -53,7 +53,7 @@ function CharClass() {
                 <button className='btn'>Choose this class</button>
             </body>
         </div>
-    )
-}
+    );
+};
 
 export default CharClass;

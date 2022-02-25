@@ -40,6 +40,6 @@ function RaceSelection() {
           </footer>
         </div>
     );
-}
+};
 
 export default RaceSelection;

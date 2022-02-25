@@ -83,6 +83,6 @@ function Race() {
                 <button className='btn'>Choose this race</button>
             </body>
         </div>
-    )
-}
+    );
+};
 export default Race;

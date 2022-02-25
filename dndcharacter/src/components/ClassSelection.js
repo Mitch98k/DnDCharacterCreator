@@ -5,7 +5,7 @@ import '../css/Common.css';
 import '../css/ClassSelection.css';
 
 function ClassSelection() {
-    const {push} = useHistory();
+    const { push } = useHistory();
 
     const [classes, setClasses] = useState([]);
     const [charClass, setCharClass] = useState();
@@ -43,6 +43,6 @@ function ClassSelection() {
             </footer>
         </div>
     );
-}
+};
 
 export default ClassSelection;
