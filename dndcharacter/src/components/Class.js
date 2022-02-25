@@ -50,7 +50,7 @@ function CharClass() {
                         <h3>{t.name}</h3>
                     ))}
                 </div>
-                <button className='btn'>Choose this class</button>
+                <button className='btn' onClick={() => push('/backgrounds')}>Choose this class</button>
             </body>
         </div>
     );

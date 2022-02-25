@@ -7,7 +7,13 @@ function BackgroundSelection() {
     const { push } = useHistory();
 
     return (
-        <div></div>
+        <div>
+            <header className="selection-header" style={{ backgroundColor: 'crimson'}}>
+                <button onClick={() => push('/')} className='home-btn'>Home</button>
+                <h1>select your background</h1>
+                <progress value='2' max='8'/>
+            </header>
+        </div>
     );
 };
 

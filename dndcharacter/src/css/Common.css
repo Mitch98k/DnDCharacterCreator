@@ -51,6 +51,17 @@ body {
   margin-right: 5vw;
 }
 
+.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  margin: 15px;
+  background-color: bisque;
+  color: blue;
+}
+
 progress {
   width: 15vw;
   margin-right: 5vw;

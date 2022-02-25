@@ -31,7 +31,7 @@ function ClassSelection() {
             <body className="selection-body">
                 {classes.map(c => (
                     <div>
-                        <div className="card" key={c.name}>
+                        <div className={charClass===c.name ? "selected" : "card"} key={c.name} onClick={() => setCharClass(c.name)}>
                             <h2>{c.name}</h2>
                         </div>
                         <p onClick={() => push(`/classes/${c.index}`)}>more info</p>
@@ -39,7 +39,7 @@ function ClassSelection() {
                 ))}
             </body>
             <footer>
-                <button className='btn'>submit</button>
+                <button className='btn' onClick={() => push('/backgrounds')}>submit</button>
             </footer>
         </div>
     );
