@@ -19,7 +19,7 @@ function ClassSelection() {
         .catch(err => {
             console.log(err)
         });
-    },[]);
+    }, []);
 
     return (
         <div>
