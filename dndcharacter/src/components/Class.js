@@ -25,7 +25,7 @@ function CharClass() {
         .catch(err => {
             console.log(err);
         });
-    },[]);
+    }, id);
 
     return (
         <div>
