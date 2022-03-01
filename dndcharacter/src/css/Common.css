@@ -15,7 +15,7 @@ header {
 }
 
 body {
-  height: 70vh;
+  height: 60vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -49,6 +49,17 @@ body {
 .home-btn {
   margin-left: 10vw;
   margin-right: 5vw;
+}
+
+.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  margin: 15px;
+  background-color: bisque;
+  color: blue;
 }
 
 progress {

@@ -5,7 +5,7 @@ import '../css/Common.css';
 import '../css/ClassSelection.css';
 
 function ClassSelection() {
-    const {push} = useHistory();
+    const { push } = useHistory();
 
     const [classes, setClasses] = useState([]);
     const [charClass, setCharClass] = useState();
@@ -19,7 +19,7 @@ function ClassSelection() {
         .catch(err => {
             console.log(err)
         });
-    },[]);
+    }, []);
 
     return (
         <div>
@@ -31,7 +31,7 @@ function ClassSelection() {
             <body className="selection-body">
                 {classes.map(c => (
                     <div>
-                        <div className="card" key={c.name}>
+                        <div className={charClass===c.name ? "selected" : "card"} key={c.name} onClick={() => setCharClass(c.name)}>
                             <h2>{c.name}</h2>
                         </div>
                         <p onClick={() => push(`/classes/${c.index}`)}>more info</p>
@@ -39,10 +39,10 @@ function ClassSelection() {
                 ))}
             </body>
             <footer>
-                <button className='btn'>submit</button>
+                <button className='btn' onClick={() => push('/backgrounds')}>submit</button>
             </footer>
         </div>
     );
-}
+};
 
 export default ClassSelection;

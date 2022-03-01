@@ -19,6 +19,6 @@ function Homepage() {
       </body>
     </div>
   );
-}
+};
 
 export default Homepage;
