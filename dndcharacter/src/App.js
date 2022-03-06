@@ -7,11 +7,19 @@ import ClassSelection from './components/ClassSelection';
 import CharClass from './components/Class';
 import BackgroundSelection from './components/BackgroundSelection';
 import Background from './components/Background';
+import AlignmentSelection from './components/AlignmentSelection';
+import Alignment from './components/Alignment';
 import './App.css';
 
 function App() {
   return (
     <div>
+      <Route path='/alignments/:id'>
+        <Alignment/>
+      </Route>
+      <Route exact path='/alignments'>
+        <AlignmentSelection/>
+      </Route>
       <Route path='/backgrounds/:id'>
         <Background/>
       </Route>
