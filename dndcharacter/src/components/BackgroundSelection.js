@@ -38,7 +38,7 @@ function BackgroundSelection() {
                 ))}
             </body>
             <footer>
-                <button className='btn'>submit</button>
+                <button className='btn' onClick={() => push('/alignments')}>submit</button>
             </footer>
         </div>
     );
