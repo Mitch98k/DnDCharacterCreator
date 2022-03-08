@@ -17,7 +17,7 @@ function Background() {
         })
         .catch(err => {
             console.log(err);
-        })
+        });
     }, id);
 
     return (
@@ -35,7 +35,7 @@ function Background() {
                         <p>{d}</p>
                     ))}
                 </div>
-                <button className='btn'>Choose this background</button>
+                <button className='btn' onClick={() => push('/alignments')}>Choose this background</button>
             </body>
         </div>
     );
