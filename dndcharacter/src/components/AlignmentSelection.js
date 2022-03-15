@@ -20,6 +20,7 @@ function AlignmentSelection() {
         });
     }, []);
 
+    alignments.sort()
     return (
         <div>
             <header className="selection-header" style={{ backgroundColor: 'grey'}}>
