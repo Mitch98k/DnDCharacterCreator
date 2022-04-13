@@ -1,40 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from "axios";
 import '../css/Common.css';
 
 function AlignmentSelection() {
     const { push } = useHistory();
 
-    const [alignments, setAlignments] = useState([]);
     const [alignment, setAlignment] = useState();
 
-    useEffect(() => {
-        axios.get('https://www.dnd5eapi.co/api/alignments')
-        .then(res => {
-            console.log(res);
-            setAlignments(res.data.results);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }, []);
+    const alignList = [{name: 'Lawful Good', id: 'lawful-good'}, {name: 'Neutral Good', id: 'neutral-good'}, {name: 'Chaotic Good', id: 'chaotic-good'}, {name: 'Lawful Neutral', id: 'lawful-neutral'}, {name: 'True Neutral', id: 'neutral'}, {name: 'Chaotic Neutral', id: 'chaotic-neutral'}, {name: 'Lawful Evil', id: 'lawful-evil'}, {name: 'Neutral Evil', id: 'neutral-evil'}, {name: 'Chaotic Evil', id: 'chaotic-evil'}];
 
-    alignments.sort()
     return (
         <div>
-            <header className="selection-header" style={{ backgroundColor: 'grey'}}>
+            <header className='selection-header' style={{ backgroundColor: 'grey'}}>
                 <button onClick={() => push('/')} className='home-btn'>Home</button>
                 <h1>select your alignment</h1>
                 <progress value='4' max='8'/>
             </header>
-            <body className='selection-body'>
-                {alignments.map(all => (
+            <body style={{display: 'flex', flexWrap: 'wrap', marginLeft: '15%', marginRight: '15%'}}>
+                {alignList.map(all => (
                     <div>
-                        <div className={alignment===all.name ? "selected" : "card"} key={all.name} onClick={() => setAlignment(all.name)}>
+                        <div className={alignment===all.name ? 'selected' : 'card'} key={all.name} onClick={() => setAlignment(all.name)}>
                             <h2>{all.name}</h2>
                         </div>
-                        <p onClick={() => push(`/alignments/${all.index}`)}>more info</p>
+                        <p onClick={() => push(`/alignments/${all.id}`)}>more info</p>
                     </div>
                 ))}
             </body>

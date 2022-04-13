@@ -19,6 +19,7 @@ function Alignment() {
             console.log(err);
         });
     }, id);
+    
     return (
         <div>
             <nav>
