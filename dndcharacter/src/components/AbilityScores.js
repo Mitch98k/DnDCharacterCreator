@@ -1,33 +1,65 @@
-import React, {useState, useEffect} from "react";
+import React, {useReducer, useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import '../css/Common.css';
 
+const initialState = {
+    strength: '',
+    dexterity: '',
+    constitution: '',
+    intelligence: '',
+    wisdom: '',
+    charisma: ''
+}
+
+function reducer(state, { field, value }) {
+    return {
+        ...state,
+        [field]: value
+    }
+}
+
 function AbilityScores() {
     const { push } = useHistory();
 
-    const [scores, setScores] = useState({Str: null, Dex: null, Con: null, Int: null, Wis: null, Cha: null});
-    // const [strength, setStrength] = useState();
-    // const [dexterity, setDexterity] = useState();
-    // const [constitution, setConstitution] = useState();
-    // const [intelligence, setIntelligence] = useState();
-    // const [wisdom, setWisdom] = useState();
-    // const [charisma, setCharisma] = useState();
+    const [state, dispatch] = useReducer(reducer, initialState);
+    
+    const handleChange = (e)=> {
+        dispatch({ field: e.target.name, value: e.target.value });
+    }
 
-    const scoresArray = Object.entries(scores);
-    console.log(scoresArray)
+    const { strength, dexterity, constitution, intelligence, wisdom, charisma } = state;
+
     return (
         <div>
             <header>
                 <h1>Set your Ability Scores</h1>
             </header>
             <body>
-                {scoresArray.map(score => (
-                    <div>
-                        <h3>{score[0]}</h3>
-                        <input type='number' min='8' max='15' placeholder='8'></input>
-                    </div>
-                ))}
+                <label htmlFor='strength'>
+                    Strength
+                <input name='strength' type='number' min='8' max='15' value={strength} onChange={handleChange}/>
+                </label>
+                <label htmlFor='dexterity'>
+                    Dexterity
+                <input name='dexterity' type='number' min='8' max='15' value={dexterity} onChange={handleChange}/>
+                </label>
+                <label htmlFor='constitution'>
+                    Constitution
+                <input name='constitution' type='number' min='8' max='15' value={constitution} onChange={handleChange}/>
+                </label>
+                <label htmlFor='intelligence'>
+                    Intelligence
+                <input name='intelligence' type='number' min='8' max='15' value={intelligence} onChange={handleChange}/>
+                </label>
+                <label htmlFor='wisdom'>
+                    Wisdom
+                <input name='wisdom' type='number' min='8' max='15' value={wisdom} onChange={handleChange}/>
+                </label>
+                <label htmlFor='charisma'>
+                    Charisma
+                <input name='charisma' type='number' min='8' max='15' value={charisma} onChange={handleChange}/>
+                </label>
             </body>
         </div>
     );
