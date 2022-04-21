@@ -1,16 +1,17 @@
 import React, {useReducer, useEffect} from "react";
 import { useHistory } from 'react-router-dom';
-import axios from "axios";
 import '../css/Common.css';
 
 const initialState = {
-    strength: '',
-    dexterity: '',
-    constitution: '',
-    intelligence: '',
-    wisdom: '',
-    charisma: ''
+    strength: '8',
+    dexterity: '8',
+    constitution: '8',
+    intelligence: '8',
+    wisdom: '8',
+    charisma: '8',
 }
+
+let points = 27;
 
 function reducer(state, { field, value }) {
     return {
@@ -24,16 +25,26 @@ function AbilityScores() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
     
-    const handleChange = (e)=> {
-        dispatch({ field: e.target.name, value: e.target.value });
-    }
-
     const { strength, dexterity, constitution, intelligence, wisdom, charisma } = state;
+
+    const handleChange = (e)=> {
+        let prevValue = parseInt(state[e.target.name]);
+        let currValue = parseInt(e.target.value);
+        if (points > 0 || prevValue > currValue) {
+            dispatch({ field: e.target.name, value: e.target.value });
+            if (currValue < 14 && prevValue < 14) {
+                prevValue < currValue ? points -= 1 : points += 1;
+            } else {
+                prevValue < currValue ? points -= 2 : points += 2;
+            }
+        } 
+    }
 
     return (
         <div>
             <header>
                 <h1>Set your Ability Scores</h1>
+                <h3>points: {points}</h3>
             </header>
             <body>
                 <label htmlFor='strength'>
