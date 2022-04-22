@@ -1,6 +1,7 @@
 import React, {useReducer, useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import '../css/Common.css';
+import '../css/AbilityScores.css';
 
 const initialState = {
     strength: '8',
@@ -42,36 +43,45 @@ function AbilityScores() {
 
     return (
         <div>
-            <header>
+            <header className="selection-header" style={{backgroundColor: 'orange'}}>
+                <button onClick={() => push('/')} className='home-btn'>Home</button>
                 <h1>Set your Ability Scores</h1>
-                <h3>points: {points}</h3>
+                <progress value='5' max='8'/>
             </header>
-            <body>
-                <label htmlFor='strength'>
+            <section className="section">
+                <div className="points">
+                    <h2>points: {points}</h2>
+                </div>
+            </section>
+            <body className="ability-body">
+                <label htmlFor='strength' className='label'>
                     Strength
-                <input name='strength' type='number' min='8' max='15' value={strength} onChange={handleChange}/>
+                <input name='strength' type='number' min='8' max='15' className='input' value={strength} onChange={handleChange}/>
                 </label>
-                <label htmlFor='dexterity'>
+                <label htmlFor='dexterity' className='label'>
                     Dexterity
-                <input name='dexterity' type='number' min='8' max='15' value={dexterity} onChange={handleChange}/>
+                <input name='dexterity' type='number' min='8' max='15' className='input' value={dexterity} onChange={handleChange}/>
                 </label>
-                <label htmlFor='constitution'>
+                <label htmlFor='constitution' className='label'>
                     Constitution
-                <input name='constitution' type='number' min='8' max='15' value={constitution} onChange={handleChange}/>
+                <input name='constitution' type='number' min='8' max='15' className='input' value={constitution} onChange={handleChange}/>
                 </label>
-                <label htmlFor='intelligence'>
+                <label htmlFor='intelligence' className='label'>
                     Intelligence
-                <input name='intelligence' type='number' min='8' max='15' value={intelligence} onChange={handleChange}/>
+                <input name='intelligence' type='number' min='8' max='15' className='input' value={intelligence} onChange={handleChange}/>
                 </label>
-                <label htmlFor='wisdom'>
+                <label htmlFor='wisdom' className='label'>
                     Wisdom
-                <input name='wisdom' type='number' min='8' max='15' value={wisdom} onChange={handleChange}/>
+                <input name='wisdom' type='number' min='8' max='15' className='input' value={wisdom} onChange={handleChange}/>
                 </label>
-                <label htmlFor='charisma'>
+                <label htmlFor='charisma' className='label'>
                     Charisma
-                <input name='charisma' type='number' min='8' max='15' value={charisma} onChange={handleChange}/>
+                <input name='charisma' type='number' min='8' max='15' className='input' value={charisma} onChange={handleChange}/>
                 </label>
             </body>
+            <footer>
+                <button className='btn'>Submit</button>
+            </footer>
         </div>
     );
 };
