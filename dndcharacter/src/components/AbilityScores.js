@@ -50,8 +50,12 @@ function AbilityScores() {
 
     if (page === 0) {
         body = <>
-                    <h1>explaination page</h1>
+                <body className="selection-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, cum dicant delicatissimi ex. Ne usu fabulas deserunt, an erant menandri atomorum duo, nam latine corrumpit in. Mei putent tractatos et, ut tation everti aliquam pri. His ut suas laboramus, stet nominavi ocurreret est an. Urbanitas percipitur no est, etiam graecis urbanitas per eu, ex mea labores feugait. Cu dicat tempor his, quem unum mea et, ei eum errem lucilius. Cum singulis lobortis adolescens te, in habeo sadipscing sed, reque dolorem vel ea.
+                    </p>
                     <button onClick={changePage}>determine scores</button>
+                </body>
                 </>
     } else if (page === 1) {
         body = <>
@@ -87,6 +91,35 @@ function AbilityScores() {
                     </label>
                 </body>
                </>
+    } else if (page === 2) {
+        body = <>
+                <body className="ability-body">
+                    <label htmlFor='strength' className='label'>
+                        Strength
+                    <input name='strength' className='input' value={strength}/>
+                    </label>
+                    <label htmlFor='dexterity' className='label'>
+                        Dexterity
+                    <input name='dexterity' className='input' value={dexterity}/>
+                    </label>
+                    <label htmlFor='constitution' className='label'>
+                        Constitution
+                    <input name='constitution' className='input' value={constitution}/>
+                    </label>
+                    <label htmlFor='intelligence' className='label'>
+                        Intelligence
+                    <input name='intelligence' className='input' value={intelligence}/>
+                    </label>
+                    <label htmlFor='wisdom' className='label'>
+                        Wisdom
+                    <input name='wisdom' className='input' value={wisdom}/>
+                    </label>
+                    <label htmlFor='charisma' className='label'>
+                        Charisma
+                    <input name='charisma' className='input' value={charisma}/>
+                    </label>
+                </body>
+               </>
     }
 
     return (
@@ -96,6 +129,11 @@ function AbilityScores() {
                 <h1>Set your Ability Scores</h1>
                 <progress value='5' max='8'/>
             </header>
+            <div className="">
+                <button onClick={()=> setPage(1)}>Point System</button>
+                <button onClick={()=> setPage(2)}>Preset Values</button>
+                <button onClick={()=> setPage(3)}>Rolling</button>
+            </div>
             {body}
         </>
     );
