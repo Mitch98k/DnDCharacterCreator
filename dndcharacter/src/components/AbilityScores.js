@@ -64,7 +64,7 @@ function AbilityScores() {
                         <h2>points: {points}</h2>
                     </div>
                 </section>
-                <body className="ability-body">
+                <body className="ability-body1">
                     <label htmlFor='strength' className='label'>
                         Strength
                     <input name='strength' type='number' min='8' max='15' className='input' value={strength} onChange={handleChange}/>
@@ -93,31 +93,37 @@ function AbilityScores() {
                </>
     } else if (page === 2) {
         body = <>
-                <body className="ability-body">
-                    <label htmlFor='strength' className='label'>
+                <body className="ability-body2">
+                    <label htmlFor='strength' className='ablName'>
                         Strength
-                    <input name='strength' className='input' value={strength}/>
+                        <div className='optContainer' value={strength}></div>
                     </label>
-                    <label htmlFor='dexterity' className='label'>
+                    <label htmlFor='dexterity' className='ablName'>
                         Dexterity
-                    <input name='dexterity' className='input' value={dexterity}/>
+                        <div className='optContainer' value={dexterity}></div>
                     </label>
-                    <label htmlFor='constitution' className='label'>
+                    <label htmlFor='constitution' className='ablName'>
                         Constitution
-                    <input name='constitution' className='input' value={constitution}/>
+                        <div className='optContainer' value={constitution}></div>
                     </label>
-                    <label htmlFor='intelligence' className='label'>
+                    <label htmlFor='intelligence' className='ablName'>
                         Intelligence
-                    <input name='intelligence' className='input' value={intelligence}/>
+                        <div className='optContainer' value={intelligence}></div>
                     </label>
-                    <label htmlFor='wisdom' className='label'>
+                    <label htmlFor='wisdom' className='ablName'>
                         Wisdom
-                    <input name='wisdom' className='input' value={wisdom}/>
+                        <div className='optContainer' value={wisdom}></div>
                     </label>
-                    <label htmlFor='charisma' className='label'>
+                    <label htmlFor='charisma' className='ablName'>
                         Charisma
-                    <input name='charisma' className='input' value={charisma}/>
+                        <div className='optContainer' value={charisma}></div>
                     </label>
+                    <p className='num'>15</p>
+                    <p className='num'>12</p>
+                    <p className='num'>10</p>
+                    <p className='num'>10</p>
+                    <p className='num'>8</p>
+                    <p className='num'>8</p>
                 </body>
                </>
     }
