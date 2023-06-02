@@ -10,12 +10,16 @@ import Background from './components/Background';
 import AlignmentSelection from './components/AlignmentSelection';
 import Alignment from './components/Alignment';
 import AbilityScores from './components/AbilityScores';
+import Personality from './components/Personality';
 import './App.css';
 
 
 function App() {
   return (
       <Switch>
+        <Route path='/personality'>
+          <Personality/>
+        </Route>
         <Route path='/ability-scores'>
           <AbilityScores/>
         </Route>

@@ -53,7 +53,7 @@ function AbilityScores() {
         if (points > 0) {
           alert("You must apply all points to your Ability Scores");  
         } else {
-            //push('/personality')
+            push('/personality');
         }
     }
     let body;
