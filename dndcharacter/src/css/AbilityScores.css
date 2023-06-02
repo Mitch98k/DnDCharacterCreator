@@ -61,3 +61,8 @@
     width: 30px;
     height: 30px;
 }
+
+.column1 {
+    flex: 50%;
+
+}

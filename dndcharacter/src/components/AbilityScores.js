@@ -1,5 +1,7 @@
 import React, {useReducer, useEffect, useState} from "react";
 import { useHistory } from 'react-router-dom';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from "react-dnd-html5-backend";
 import '../css/Common.css';
 import '../css/AbilityScores.css';
 
@@ -24,6 +26,7 @@ function AbilityScores() {
 
     const [page, setPage] = useState(0);
     const [points, setPoints] = useState(27);
+    const [position, setPostition] = useState();
 
     const [state, dispatch] = useReducer(reducer, initialState);
     
@@ -46,6 +49,13 @@ function AbilityScores() {
         } 
     }
 
+    const handleSubmit = () => {
+        if (points > 0) {
+          alert("You must apply all points to your Ability Scores");  
+        } else {
+            //push('/personality')
+        }
+    }
     let body;
 
     if (page === 0) {
@@ -90,43 +100,57 @@ function AbilityScores() {
                     <input name='charisma' type='number' min='8' max='15' className='input' value={charisma} onChange={handleChange}/>
                     </label>
                 </body>
+                <footer>
+                    <button onClick={handleSubmit}>Submit</button>
+                </footer>
                </>
     } else if (page === 2) {
         body = <>
                 <body className="ability-body2">
-                    <label htmlFor='strength' className='ablName'>
-                        Strength
-                        <div className='optContainer' value={strength}></div>
-                    </label>
-                    <label htmlFor='dexterity' className='ablName'>
-                        Dexterity
-                        <div className='optContainer' value={dexterity}></div>
-                    </label>
-                    <label htmlFor='constitution' className='ablName'>
-                        Constitution
-                        <div className='optContainer' value={constitution}></div>
-                    </label>
-                    <label htmlFor='intelligence' className='ablName'>
-                        Intelligence
-                        <div className='optContainer' value={intelligence}></div>
-                    </label>
-                    <label htmlFor='wisdom' className='ablName'>
-                        Wisdom
-                        <div className='optContainer' value={wisdom}></div>
-                    </label>
-                    <label htmlFor='charisma' className='ablName'>
-                        Charisma
-                        <div className='optContainer' value={charisma}></div>
-                    </label>
-                    <p className='num'>15</p>
-                    <p className='num'>12</p>
-                    <p className='num'>10</p>
-                    <p className='num'>10</p>
-                    <p className='num'>8</p>
-                    <p className='num'>8</p>
+                    <div className="column1">
+                        <label htmlFor='strength' className='ablName'>
+                            Strength
+                            <div className='optContainer' id="strength" value={strength}></div>
+                        </label>
+                        <label htmlFor='dexterity' className='ablName'>
+                            Dexterity
+                            <div className='optContainer' id="dexterity" value={dexterity}></div>
+                        </label>
+                        <label htmlFor='constitution' className='ablName'>
+                            Constitution
+                            <div className='optContainer' id="constitution" value={constitution}></div>
+                        </label>
+                        <label htmlFor='intelligence' className='ablName'>
+                            Intelligence
+                            <div className='optContainer' id="intelligence" value={intelligence}></div>
+                        </label>
+                        <label htmlFor='wisdom' className='ablName'>
+                            Wisdom
+                            <div className='optContainer' id="wisdom" value={wisdom}></div>
+                        </label>
+                        <label htmlFor='charisma' className='ablName'>
+                            Charisma
+                            <div className='optContainer' id="charisma" value={charisma}></div>
+                        </label>
+                    </div>
+                    <div className="column 2">
+                        <p className='num' id="15">15</p>
+                        <p className='num' id="14">14</p>
+                        <p className='num' id="13">13</p>
+                        <p className='num' id="12">12</p>
+                        <p className='num' id="10">10</p>
+                        <p className='num' id="8">8</p>
+                    </div>
                 </body>
                </>
-    }
+    } else {
+        body = <>
+            <body className="ability-body2">
+                <h1>Roll for stats</h1>
+                <button>Roll</button>
+            </body>
+        </>
+            }
 
     return (
         <>
@@ -140,7 +164,9 @@ function AbilityScores() {
                 <button onClick={()=> setPage(2)}>Preset Values</button>
                 <button onClick={()=> setPage(3)}>Rolling</button>
             </div>
+            <DndProvider backend={HTML5Backend}>
             {body}
+            </DndProvider>
         </>
     );
 };
