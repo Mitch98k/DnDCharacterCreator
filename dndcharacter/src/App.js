@@ -9,11 +9,16 @@ import BackgroundSelection from './components/BackgroundSelection';
 import Background from './components/Background';
 import AlignmentSelection from './components/AlignmentSelection';
 import Alignment from './components/Alignment';
+import AbilityScores from './components/AbilityScores';
 import './App.css';
+
 
 function App() {
   return (
       <Switch>
+        <Route path='/ability-scores'>
+          <AbilityScores/>
+        </Route>
         <Route path='/alignments/:id'>
           <Alignment/>
         </Route>
