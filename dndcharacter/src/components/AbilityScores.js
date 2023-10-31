@@ -1,7 +1,5 @@
-import React, {useReducer, useEffect, useState} from "react";
+import React, {useReducer, useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from "react-dnd-html5-backend";
 import '../css/Common.css';
 import '../css/AbilityScores.css';
 
@@ -101,7 +99,7 @@ function AbilityScores() {
                     </label>
                 </body>
                 <footer>
-                    <button onClick={handleSubmit}>Submit</button>
+                    <button className='btn' onClick={handleSubmit}>Submit</button>
                 </footer>
                </>
     } else if (page === 2) {
@@ -142,6 +140,9 @@ function AbilityScores() {
                         <p className='num' id="8">8</p>
                     </div>
                 </body>
+                <footer>
+                    <button className='btn' onClick={handleSubmit}>Submit</button>
+                </footer>
                </>
     } else {
         body = <>
@@ -149,6 +150,9 @@ function AbilityScores() {
                 <h1>Roll for stats</h1>
                 <button>Roll</button>
             </body>
+            <footer>
+                    <button className='btn' onClick={handleSubmit}>Submit</button>
+                </footer>
         </>
             }
 
@@ -164,9 +168,7 @@ function AbilityScores() {
                 <button onClick={()=> setPage(2)}>Preset Values</button>
                 <button onClick={()=> setPage(3)}>Rolling</button>
             </div>
-            <DndProvider backend={HTML5Backend}>
             {body}
-            </DndProvider>
         </>
     );
 };

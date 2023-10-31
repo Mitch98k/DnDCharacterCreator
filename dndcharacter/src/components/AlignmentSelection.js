@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import '../css/Common.css';
 
@@ -27,7 +27,7 @@ function AlignmentSelection() {
                 ))}
             </body>
             <footer>
-                <button className='btn'>submit</button>
+                <button className='btn' onClick={() => push('/ability-scores')}>submit</button>
             </footer>
         </div>
     );
